@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  code-server:
+    build: .
+    container_name: go_code_server
+    ports:
+      - "8081:8080"
+    volumes:
+      - coder_home:/home/coder
+    restart: unless-stopped
+
+volumes:
+  coder_home:
